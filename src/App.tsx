@@ -1,6 +1,3 @@
-import { useState } from "react"
-import reactLogo from "./assets/react.svg"
-import ReactPlayer from "react-player"
 import React from "react"
 
 function App() {
