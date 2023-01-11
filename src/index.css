@@ -30,7 +30,7 @@ body {
    place-items: center;
    min-width: 320px;
    min-height: 100vh;
-   background-image: url("bg.jpg");
+   background-image: url("/bg.jpg");
    overflow: hidden;
    background-position: center; /* Center the image */
    background-repeat: no-repeat; /* Do not repeat the image */
@@ -137,7 +137,7 @@ button:focus-visible {
 }
 
 .clickMe {
-   background-image: url("star.png");
+   background-image: url("/star.png");
    height: 70px;
    width: 70px;
    background-position: center; /* Center the image */
