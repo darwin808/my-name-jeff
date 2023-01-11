@@ -6,7 +6,7 @@ function App() {
 
    const handlePlay = () => {
       ref1.current.play()
-      // ref1.current.requestFullscreen()
+      ref1.current.requestFullscreen()
       setshowJeff(true)
    }
 
@@ -28,19 +28,19 @@ function App() {
             id="vid"
             ref={ref1}
             style={{
+               pointerEvents: "none",
                position: "fixed",
                right: 0,
                bottom: 0,
-               minWidth: "100%",
-               minHeight: "100%",
+               minWidth: "100vh",
+               minHeight: "100vw",
                display: showJeff ? "block" : "none",
+               objectFit: "cover",
             }}
-            controls={false}
             src={"/vid/jeff.mp4"}
             loop
-            // autoPlay
+            autoPlay
             className="bgvid"
-            // muted={muted}
          ></video>
 
          {!showJeff && (
