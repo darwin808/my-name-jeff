@@ -1,8 +1,18 @@
 import { useState } from "react"
 import reactLogo from "./assets/react.svg"
 import ReactPlayer from "react-player"
+import React from "react"
 
 function App() {
+   const ref1 = React.useRef<any>()
+   const [showJeff, setshowJeff] = React.useState<Boolean>(false)
+
+   const handlePlay = () => {
+      ref1.current.play()
+      // ref1.current.requestFullscreen()
+      setshowJeff(true)
+   }
+
    return (
       <div
          className="App"
@@ -14,20 +24,33 @@ function App() {
             alignItems: "center",
             justifyItems: "center",
             justifyContent: "center",
+            position: "relative",
          }}
       >
          <video
+            id="vid"
+            ref={ref1}
             style={{
-               objectFit: "cover",
-               height: "100%",
-               width: "100%",
+               position: "fixed",
+               right: 0,
+               bottom: 0,
+               minWidth: "100%",
+               minHeight: "100%",
+               display: showJeff ? "block" : "none",
             }}
+            controls={false}
             src={"/vid/jeff.mp4"}
-            muted
             loop
-            autoPlay
+            // autoPlay
             className="bgvid"
+            // muted={muted}
          ></video>
+
+         {!showJeff && (
+            <div className="bubble" onClick={handlePlay}>
+               <div className="clickMe"></div>
+            </div>
+         )}
       </div>
    )
 }
