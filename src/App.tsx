@@ -7,14 +7,11 @@ function App() {
    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
    const handlePlay = () => {
       ref1.current.play()
-      ref1.current.requestFullscreen()
-      setshowJeff(true)
-   }
-   React.useEffect(() => {
-      if (isMobile) {
+      if (!isMobile) {
          ref1.current.requestFullscreen()
       }
-   }, [ref1.current])
+      setshowJeff(true)
+   }
 
    return (
       <div
