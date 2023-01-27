@@ -13,6 +13,7 @@ function App() {
       setshowJeff(true)
    }
 
+   console.log("test")
    return (
       <div
          className="App"
